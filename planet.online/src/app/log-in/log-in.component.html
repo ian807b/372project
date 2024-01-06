@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="main">
+    <h2 class="logo">Planet Online</h2>
+    <div class="container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input
+          matInput
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+          class="account"
+        />
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          class="account"
+        />
+        <div class="button-container">
+          <button mat-raised-button type="submit" class="account">Login</button>
+          <button
+            mat-raised-button
+            type="submit"
+            class="btn btn-primary"
+            (click)="cancel()"
+            class="account"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+.account-wrapper,
+.login-register-wrapper {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: large;
+  padding: 20px;
+  background-image: url('../../images/main_page_background_top.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.account {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 18px;
+}
+
+.account:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-shape-divider-bottom-1678602686 {
+  overflow: hidden;
+}
+
+.shape-fill {
+  fill: #3f51b5;
+}
+
+.flex-container {
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.account-logout {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.force-font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#account-settings-letter {
+  font-weight: 500;
+  font-size: 2em;
+  margin-bottom: 20px;
+}

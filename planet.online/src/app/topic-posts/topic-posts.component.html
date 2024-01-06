@@ -1,0 +1,18 @@
+<div class="wrapper" *ngIf="topic">
+  <h1 class="topic-name">{{ topic.topic_name }}</h1>
+  <h1 class="topic-description">{{ topic.description }}</h1>
+  <div class="threads-container">
+    <div
+      *ngFor="let thread of threads; index as i"
+      [attr.data-index]="i"
+      class="thread"
+      (click)="goToThread(topic.topic_id, i)"
+    >
+      <div class="thread-header">{{ i + 1 }}. {{ thread.t_subject }}</div>
+      <div class="thread-content">
+        {{ thread.p_text }}
+      </div>
+      <div class="thread-footer">Posted by {{ thread.p_username }}</div>
+    </div>
+  </div>
+</div>

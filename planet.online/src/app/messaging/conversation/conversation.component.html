@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="message-container">
+    <h2 class="force-font">Messages</h2>
+    <div class="message-list">
+      <div *ngFor="let message of messages" class="message-item">
+        <div class="message-time">
+          {{ message.timestamp | date : 'medium' }}
+        </div>
+        <div class="sender-receiver">
+          From: {{ message.sender_name }} - To: {{ message.receiver_name }}
+        </div>
+        <div class="message-content">Message: {{ message.content }}</div>
+      </div>
+    </div>
+    <mat-form-field class="footer" appearance="fill">
+      <mat-label>Content</mat-label>
+      <textarea (keyup.enter)="addMessage()"  matInput [(ngModel)]="toSend"></textarea>
+    </mat-form-field>
+    
+  </div>
+</div>

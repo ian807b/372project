@@ -1,0 +1,103 @@
+<!-- <ng-container class="wrapper" *ngIf="loggedIn">
+    <h1>Welcome to the forum</h1>
+    <h3>Welcome! {{username}}</h3>
+    <app-map></app-map>
+    <button mat-raised-button color="primary" (click)="goToMessages(username)" class="account">Go to Messages</button>
+    <button mat-raised-button color="primary" (click)="logout()" class="account">Logout</button>
+</ng-container>
+
+<ng-container *ngIf="!loggedIn">
+    <p>Please log in</p>
+</ng-container> -->
+
+<!-- <div class="wrapper container" *ngIf="loggedIn">
+    <div class="d-grid gap-2 col-6 mx-auto" id="buttondiv">
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>    
+            <h1>Account Settings</h1>
+            <h3>Welcome! {{username}}</h3>
+            <h4 *ngIf="user">Current location: {{user.city || "N/A"}}, {{user.country || "N/A"}}</h4>
+            <button mat-raised-button color="primary" (click)="updateLocation(username)" class="account">Update location</button>
+            <button mat-raised-button color="primary" (click)="goToMessages(username)" class="account">Go to Messages</button>
+            <button mat-raised-button color="primary" (click)="logout()" class="account">Logout</button>
+            
+        </div>
+    </div>
+    <div class="row" *ngIf="user">
+            <app-map [userLocation]="user"></app-map>
+        
+    </div>
+</div>
+
+<ng-container *ngIf="!loggedIn">
+    <div class="custom-shape-divider-bottom-1678602686">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <br>
+    <br>
+    <div class="wrapper">
+        <div class="d-grid gap-2 col-6 mx-auto" id="buttondiv">
+            <a href="/login" class="btn btn-primary">Log-In</a>
+            <a href="/register" class="btn btn-primary">Register</a>
+        </div>
+    </div>
+</ng-container> -->
+
+<div class="account-wrapper" *ngIf="loggedIn">
+  <div class="flex-container">
+    <h1 class="force-font" id="account-settings-letter">Account Settings</h1>
+    <h3 class="force-font">Welcome! {{ username }}</h3>
+    <h4 *ngIf="user" class="force-font">
+      Current location: {{ user.city || 'N/A' }}, {{ user.country || 'N/A' }}
+    </h4>
+    <div class="button-container">
+      <div class="top-buttons">
+        <button (click)="updateLocation(username)" class="account">
+          Update Location
+        </button>
+        <button (click)="goToMessages(username)" class="account">
+          Go to Messages
+        </button>
+        <button (click)="changePassword(username)" class="account">
+          Change Password
+        </button>
+
+      </div>
+      <button (click)="logout()" class="account account-logout">Logout</button>
+    </div>
+  </div>
+  <div *ngIf="user">
+    <app-map [userLocation]="user"></app-map>
+  </div>
+</div>
+
+<ng-container *ngIf="!loggedIn">
+  <div class="custom-shape-divider-bottom-1678602686">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"
+      ></path>
+    </svg>
+  </div>
+  <br />
+  <br />
+  <div class="login-register-wrapper">
+    <div class="button-container">
+      <a href="/login" class="btn btn-primary">Log-In</a>
+      <a href="/register" class="btn btn-primary">Register</a>
+    </div>
+  </div>
+</ng-container>

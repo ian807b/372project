@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="authorized">
+    <h1>Admin Commands</h1>
+
+    <form [formGroup]="banUserForm" (ngSubmit)="banUserSubmit()">
+        <h3>Ban User</h3>
+        <input type="input" formControlName="userid"/>
+        <input type="submit"/>
+    </form>
+
+
+    <h3>Delete Post</h3>
+    <form [formGroup]="deletePostForm" (ngSubmit)="deletePostSubmit()">
+        <input type="input" formControlName="postid"/>
+        <input type="submit"/>
+    </form>
+</div>

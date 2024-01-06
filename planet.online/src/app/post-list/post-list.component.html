@@ -1,0 +1,35 @@
+<ng-container *ngIf="loggedIn">
+  <div class="wrapper2">
+    <div class="flex-container">
+      <app-map-global></app-map-global>
+      <div class="content">
+        <h1 class="force-font">Welcome to Planet Online!</h1>
+        <p class="force-font">Welcome! {{ username }}</p>
+        <div class="actions">
+          <button class="action-btn" routerLink="/add">Add Thread</button>
+          <button class="action-btn" routerLink="/account/{{ username }}">
+            My Account
+          </button>
+        </div>
+        <h2 class="force-font">Topics</h2>
+        <ul class="topics">
+          <li
+            *ngFor="let topic of topics"
+            class="topic-item"
+            (click)="goToTopic(topic.topic_id)"
+          >
+            {{ topic.topic_name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!loggedIn">
+  <div class="planet-online">Planet Online</div>
+  <div class="wrapper">
+    <button class="custom-btn" routerLink="/login">Log-In</button>
+    <button class="custom-btn" routerLink="/register">Register</button>
+  </div>
+</ng-container>

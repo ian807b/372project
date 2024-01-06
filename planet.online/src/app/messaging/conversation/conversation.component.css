@@ -1,0 +1,60 @@
+.wrapper {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 100px 20px 20px;
+  color: #fff;
+  height: 100vh;
+  max-width: 100%;
+}
+
+.message-container {
+  max-width: 30vw;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.message-list {
+  overflow: auto;
+  max-height: 60vh;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(44, 62, 80, 0.85);
+}
+
+.message-item {
+  padding: 10px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message-time {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.sender-receiver {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.message-content {
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+
+.force-font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10vh;
+  max-width: 30vw;
+}

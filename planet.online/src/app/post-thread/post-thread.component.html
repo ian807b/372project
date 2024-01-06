@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <div class="post-thread-container">
+    <div>
+      <div class="thread-title">Subject: {{ thread.t_subject }}</div>
+      <div class="thread-postedby">Posted by <span class="countryCode">{{getFlagEmoji(thread.p_country_code)}}</span> {{ thread.p_username }} at {{ thread.p_timestamp | date : 'short' }} No. {{thread.p_post_id}}</div>
+      <br>
+      <div class="thread-text">{{ thread.p_text }}</div>
+      <br>
+      <hr>
+
+      <div *ngFor="let post of posts">
+        <div id="{{ post.p_post_id }}">
+            <span class="username">Posted by <span class="countryCode">{{getFlagEmoji(post.p_country_code)}}</span> {{ post.p_username }}</span>  &nbsp;
+            {{ post.p_timestamp | date : 'short' }}
+            <a
+            class="link"
+            href="{{ url }}#{{ post.p_post_id }}"
+            skipLocationChange
+            title="Go to post."
+            >No.</a
+            >
+            
+            <span
+            class="link"
+            href=""
+            (click)="addReplyToBox(post.p_post_id)"
+            skipLocationChange
+            title="Reply to post."
+            >{{ post.p_post_id }}</span
+            >
+            &#9658;
+            <span *ngFor="let reply_id of get_replies_for_post(post.p_post_id)">
+            <a
+                class="link"
+                href="{{ url }}#{{ reply_id }}"
+                skipLocationChange
+                title="Go to reply."
+                > {{ reply_id }}</a>
+            </span>
+        </div>
+        <div class="postContent" [innerHTML]="parsePost(post.p_text)"></div>
+      </div>
+
+      <div id="newPostContainer">
+        <h4>Reply to Thread No.{{ thread.p_post_id }}</h4>
+        <form
+          [formGroup]="addPostForm"
+          id="newPostForm"
+          (ngSubmit)="onSubmit(captchaRef);"
+        >
+          Username: {{ currentUser }}
+          <textarea placeholder="Comment" formControlName="content"></textarea>
+          <!-- <input type="file"> -->
+          <re-captcha
+            formControlName="recaptchaReactive" #captchaRef="reCaptcha" (resolved)="checkCaptcha($event)" ngModel siteKey="6Lc-N14lAAAAAElGxiSD5-4gs7OGjGBE_dReZM8G">
+          </re-captcha>
+          <!-- <input class="custom-submit-btn" type="submit" value="Submit" /> -->
+          <button class="custom-submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

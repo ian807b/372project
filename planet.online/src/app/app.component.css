@@ -1,0 +1,55 @@
+.custom-nav-link {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.search-form {
+  width: 33%;
+}
+
+.search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 200px;
+  border-radius: 1px solid white;
+}
+
+.search-input::placeholder {
+  color: rgb(147, 145, 145);
+  opacity: 1;
+}
+
+.custom-search-btn {
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.custom-search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.offcanvas-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+:host {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.btn custom-search-btn {
+  margin-right: 10px;
+}

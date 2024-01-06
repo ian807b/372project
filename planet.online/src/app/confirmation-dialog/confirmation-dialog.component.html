@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Password update</p>
+  <mat-form-field appearance="fill">
+    <mat-label>New password</mat-label>
+    <input matInput [(ngModel)]="data.password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.password" cdkFocusInitial>Submit</button>
+</div>

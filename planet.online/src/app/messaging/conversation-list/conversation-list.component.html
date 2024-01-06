@@ -1,0 +1,27 @@
+<div class="background-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="force-font">Conversations</h2>
+        <button class="create-message-btn" (click)="addMessage()">
+          <span>Create a New Message</span>
+          <mat-icon>add</mat-icon>
+        </button>
+        <div *ngFor="let conv of conversationList">
+          <button
+            class="conv-btn"
+            (click)="selectConv(conv.id)"
+            [class.selected]="conv.id === selected"
+          >
+            From: {{ conv.user1_name }} - To: {{ conv.user2_name }}
+          </button>
+        </div>
+      </div>
+
+      <div class="col-7">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>

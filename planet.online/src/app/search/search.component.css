@@ -1,0 +1,59 @@
+.search-wrapper {
+  background-image: url('../../images/main_page_background_top.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 4rem;
+}
+
+.search-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.custom-button {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #555;
+}
+
+.search-result {
+  margin: 5px 0;
+}
+
+.result-button {
+  width: 400px;
+  text-align: left;
+}
+
+h3,
+h4, .force-font {
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+}

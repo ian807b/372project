@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md" id="mapid"></div>
+      
+      <div class="col-md" style="border:solid 2px">
+        <button style="margin-top:10px" mat-raised-button color="accent" (click)="findNearby()">Find nearby users</button>
+        <div style="margin-top:10px">Nearby Users (click to send a message):</div> 
+        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+        <div *ngFor="let user of userList">
+          <button style="margin-top:10px" mat-raised-button color="primary" matTooltip="Message user" (click)="messageUser(user.username)">
+            {{user.username}} ({{user.city}}, {{user.country}})
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+

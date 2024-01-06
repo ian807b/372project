@@ -1,0 +1,36 @@
+<ng-container *ngIf="loggedIn">
+    <div class="wrapper search-wrapper">
+        <div class="search-content">
+            <div *ngIf="user" class="user-info">
+                <h3>Welcome! {{user.username}}</h3>
+                <h4>Current location: {{user.city || "N/A"}}, {{user.country || "N/A"}}</h4>
+                <div class="button-container">
+                    <button class="custom-button" (click)="message(user.username)">MESSAGE <mat-icon> message</mat-icon></button>
+                    <button type="submit" class="custom-button" routerLink="/home">HOME <mat-icon>home</mat-icon></button>
+                </div>
+            </div>
+            <h1 class="force-font">Results:</h1>
+            <div *ngFor="let thread of threads; index as i" [attr.data-index]="i" class="search-result">
+                <button class="custom-button result-button" (click)="goToThread(thread.p_topic_id,i)">
+                    {{i+1}}. {{ thread.t_subject }} - {{ thread.p_text }} - posted by {{ thread.p_username }}
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!loggedIn">
+    <div class="custom-shape-divider-top-1680231552">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <br>
+    <br>
+    <div class="wrapper">
+        <div class="d-grid gap-2 col-6 mx-auto" id="buttondiv">
+            <a href="/login" class="btn btn-primary">Log-In</a>
+            <a href="/register" class="btn btn-primary">Register</a>
+        </div>
+    </div>
+</ng-container>
